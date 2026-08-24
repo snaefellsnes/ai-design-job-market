@@ -1,4 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Skills for Designers</title>
+<meta name="description" content="A path through free, on-demand Maven Lightning Lessons for a designer building AI fluency, UI craft, product sense, and everything it takes to land the next role.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -98,6 +104,7 @@
   main{padding:22px 0 10px;}
   section.skill{ padding:52px 0 8px; border-top:1px solid var(--rule); scroll-margin-top:20px; }
   section.skill:first-of-type{border-top:none; padding-top:8px;}
+  section.skill.no-rule{border-top:none; padding-top:8px;}
   h2{
     font-family:"Fraunces", Georgia, serif; font-weight:600;
     font-size:1.5rem; letter-spacing:-0.005em; margin:0 0 8px; text-wrap:balance;
@@ -105,33 +112,43 @@
   .why{ color:var(--ink-soft); max-width:58ch; margin:0 0 22px; font-size:1rem; }
 
   .lessons{ display:flex; flex-direction:column; gap:12px; }
-  .lesson{
+  a.lesson{
+    display:block; text-decoration:none; color:inherit;
     background:var(--surface); border:1px solid var(--rule); border-radius:12px;
     padding:16px 20px; box-shadow:var(--shadow);
+    transition:border-color .12s ease, transform .12s ease;
   }
-  .lesson .title{ font-weight:600; font-size:1rem; color:var(--ink); }
-  .lesson .title a{color:inherit; text-decoration:none; border-bottom:1px solid var(--rule-strong);}
-  .lesson .title a:hover{color:var(--accent); border-color:var(--accent);}
+  a.lesson:hover{border-color:var(--accent); transform:translateY(-1px);}
+  a.lesson:hover .title{color:var(--accent);}
+  .lesson .title{ font-weight:600; font-size:1rem; color:var(--ink); display:flex; align-items:baseline; gap:6px; }
+  .lesson .title .arrow{ font-size:.85em; color:var(--ink-faint); flex:none; }
   .lesson .blurb{ margin-top:6px; font-size:.92rem; color:var(--ink-soft); max-width:56ch; }
-  .lesson .foot{ display:flex; align-items:center; gap:14px; margin-top:12px; font-size:.82rem; color:var(--ink-faint); }
+  .lesson .foot{ display:flex; align-items:center; gap:14px; margin-top:12px; font-size:.82rem; color:var(--ink-faint); flex-wrap:wrap; }
   .lesson .watch{
     display:inline-flex; align-items:center; gap:5px;
     background:var(--good-soft); color:var(--good);
     font-size:.76rem; font-weight:600; letter-spacing:.02em;
     padding:3px 9px; border-radius:99px;
   }
+  .lesson .search{
+    display:inline-flex; align-items:center; gap:5px;
+    background:var(--accent-soft); color:var(--accent);
+    font-size:.76rem; font-weight:600; letter-spacing:.02em;
+    padding:3px 9px; border-radius:99px;
+  }
   .lesson .dur{ font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.78rem; color:var(--ink-soft); }
 
-  .divider{
-    margin:60px 0 44px; padding-top:44px; border-top:2px solid var(--rule-strong);
-  }
+  .divider{ margin:60px 0 44px; padding-top:44px; border-top:2px solid var(--rule-strong); }
   .divider h2{ font-size:1.75rem; margin-bottom:8px; }
   .divider .why{ margin-bottom:0; }
+
+  .note{ margin:18px 0 0; padding:14px 16px; background:var(--surface-2); border-radius:10px; font-size:.88rem; color:var(--ink-soft); }
 
   footer{ border-top:1px solid var(--rule); padding:30px 0 60px; margin-top:20px; }
   footer p{ color:var(--ink-faint); font-size:.85rem; max-width:60ch; margin:0 0 10px; }
 </style>
-
+</head>
+<body>
 <div class="wrap">
   <header class="page">
     <p class="eyebrow">
@@ -169,30 +186,35 @@
 
   <main>
 
-    <section class="skill" id="s1">
+    <section class="skill no-rule" id="s1">
       <h2>Get comfortable with AI</h2>
       <p class="why">The basics, explained kindly — a working sense of what AI tools actually do, without jargon or code.</p>
       <div class="lessons">
-        <div class="lesson">
-          <div class="title">The AI-Assisted Design Process</div>
+
+        <a class="lesson" href="https://maven.com/p/085472/the-ai-assisted-design-process" target="_blank" rel="noopener">
+          <div class="title">The AI-Assisted Design Process <span class="arrow">↗</span></div>
           <div class="blurb">What a normal design process looks like once AI quietly becomes part of a few of the steps.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Maxime Rabot</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Mastering Claude Cowork: Become an AI-Native Professional</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">45 min</span><span>Maxime Rabot</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/6f5db3/mastering-claude-cowork-become-an-ai-native-professional" target="_blank" rel="noopener">
+          <div class="title">Mastering Claude Cowork: Become an AI-Native Professional <span class="arrow">↗</span></div>
           <div class="blurb">A friendly tour of Claude's assistant mode — for everyday tasks like organizing files and research, not code.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">60 min</span><span>Aishwarya Srinivasan &amp; Arvind Narayan</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Introduction to AI Agents</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">60 min</span><span>Aishwarya Srinivasan &amp; Arvind Narayan</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/8e9529/introduction-to-ai-agents" target="_blank" rel="noopener">
+          <div class="title">Introduction to AI Agents <span class="arrow">↗</span></div>
           <div class="blurb">A plain-English explanation of what "AI agents" actually means: tools that can carry out a multi-step task on their own, not just answer a question.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">60 min</span><span>Allie K. Miller</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">NotebookLM Masterclass</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">60 min</span><span>Allie K. Miller</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/9e9e74/30-min-notebook-lm-masterclass" target="_blank" rel="noopener">
+          <div class="title">NotebookLM Masterclass <span class="arrow">↗</span></div>
           <div class="blurb">Google's free tool for organizing notes and research — handy for keeping user research tidy and easy to search later.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Dr. Marily Nika</span></div>
-        </div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">30 min</span><span>Dr. Marily Nika</span></div>
+        </a>
+
       </div>
     </section>
 
@@ -200,21 +222,25 @@
       <h2>Design systems + AI</h2>
       <p class="why">Keeping a design system solid instead of drifting off-brand once AI tools start touching it.</p>
       <div class="lessons">
-        <div class="lesson">
-          <div class="title"><a href="https://maven.com/p/7ff349/ai-ready-design-systems-masterclass" target="_blank" rel="noopener">AI Ready Design Systems Masterclass</a></div>
+
+        <a class="lesson" href="https://maven.com/p/7ff349/ai-ready-design-systems-masterclass" target="_blank" rel="noopener">
+          <div class="title">AI Ready Design Systems Masterclass <span class="arrow">↗</span></div>
           <div class="blurb">How to set up a design system so AI tools use it correctly, instead of guessing and drifting off-brand.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">60 min</span><span>John Rodrigues</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Building Real Design Systems with Agents</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">60 min</span><span>John Rodrigues</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22Building+Real+Design+Systems+with+Agents%22" target="_blank" rel="noopener">
+          <div class="title">Building Real Design Systems with Agents <span class="arrow">↗</span></div>
           <div class="blurb">How AI tools can help build and maintain a design system without adding chaos to it.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Jan Six &amp; Anna Arteeva</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">How Design Systems Teams Are Actually Using AI</div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">45 min</span><span>Jan Six &amp; Anna Arteeva</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22How+Design+Systems+Teams+Are+Actually+Using+AI%22" target="_blank" rel="noopener">
+          <div class="title">How Design Systems Teams Are Actually Using AI <span class="arrow">↗</span></div>
           <div class="blurb">A panel of real design systems teams comparing notes on what's actually working for them, and what isn't.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">60 min</span><span>Panel discussion</span></div>
-        </div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">60 min</span><span>Panel discussion</span></div>
+        </a>
+
       </div>
     </section>
 
@@ -222,31 +248,37 @@
       <h2>Prototype &amp; design AI products</h2>
       <p class="why">Turning designs into working prototypes with AI's help, and the interface patterns showing up across AI products right now.</p>
       <div class="lessons">
-        <div class="lesson">
-          <div class="title">Create AI-Powered Prototypes as a Product Designer</div>
+
+        <a class="lesson" href="https://maven.com/p/fb28ec/create-ai-powered-prototypes-as-a-product-designer" target="_blank" rel="noopener">
+          <div class="title">Create AI-Powered Prototypes as a Product Designer <span class="arrow">↗</span></div>
           <div class="blurb">Turning a design into a working prototype with AI's help — no coding background needed.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Xinran Ma</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Claude Design — A Masterclass</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">45 min</span><span>Xinran Ma</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/a8ae73/claude-design-a-master-class" target="_blank" rel="noopener">
+          <div class="title">Claude Design — A Masterclass <span class="arrow">↗</span></div>
           <div class="blurb">A look at Claude's own design tool, for sketching out screens without needing to open Figma.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Rupa Chaturvedi</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Design Patterns for AI Interfaces</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">45 min</span><span>Rupa Chaturvedi</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/c0703a/design-patterns-for-ai-interfaces" target="_blank" rel="noopener">
+          <div class="title">Design Patterns for AI Interfaces <span class="arrow">↗</span></div>
           <div class="blurb">The recurring screen patterns showing up across AI products, so you're not reinventing them each time.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">60 min</span><span>Vitaly Friedman</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title"><a href="https://maven.com/p/1b15d8/beyond-the-screen-designing-for-a-ui-less-future" target="_blank" rel="noopener">Beyond the Screen: Designing for a UI-Less Future</a></div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">60 min</span><span>Vitaly Friedman</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/1b15d8/beyond-the-screen-designing-for-a-ui-less-future" target="_blank" rel="noopener">
+          <div class="title">Beyond the Screen: Designing for a UI-Less Future <span class="arrow">↗</span></div>
           <div class="blurb">A gentle look at what design looks like when there isn't always a screen to design.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Erin Essex</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Everyone's Vibe Coding: Here's What They're Missing</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">30 min</span><span>Erin Essex</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/ced822/everyone-s-vibe-coding-here-s-what-they-re-missing" target="_blank" rel="noopener">
+          <div class="title">Everyone's Vibe Coding: Here's What They're Missing <span class="arrow">↗</span></div>
           <div class="blurb">A kind but honest reality check on "vibe coding" — where it genuinely helps a designer, and where it quietly leads you astray.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Erin Essex</span></div>
-        </div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">45 min</span><span>Erin Essex</span></div>
+        </a>
+
       </div>
     </section>
 
@@ -254,26 +286,31 @@
       <h2>Grow your product sense</h2>
       <p class="why">Product sense is really just good judgment: knowing what's worth building, and why — especially now that AI has changed what's fast and easy to build.</p>
       <div class="lessons">
-        <div class="lesson">
-          <div class="title">Product Sense in the Age of AI: What Changes, What Doesn't</div>
+
+        <a class="lesson" href="https://maven.com/p/d85f6c/product-sense-in-the-age-of-ai-what-changes-what-doesn-t" target="_blank" rel="noopener">
+          <div class="title">Product Sense in the Age of AI: What Changes, What Doesn't <span class="arrow">↗</span></div>
           <div class="blurb">A clear-eyed look at what "product sense" still means once AI can build almost anything you ask for.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Mahesh Yadav &amp; Nancy Chu</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Product Fundamentals: Back to Basics in the Age of AI</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">45 min</span><span>Mahesh Yadav &amp; Nancy Chu</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22Product+Fundamentals%3A+Back+to+Basics+in+the+Age+of+AI%22" target="_blank" rel="noopener">
+          <div class="title">Product Fundamentals: Back to Basics in the Age of AI <span class="arrow">↗</span></div>
           <div class="blurb">A friendly refresher on the fundamentals of good product thinking, even with AI in the mix.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Danielle Tye</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">From Product Mindset → Service Design Mindsets</div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">30 min</span><span>Danielle Tye</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22Product+Mindset%22+%22Service+Design+Mindsets%22+Frank+Spillers" target="_blank" rel="noopener">
+          <div class="title">From Product Mindset → Service Design Mindsets <span class="arrow">↗</span></div>
           <div class="blurb">Zooming out from a single feature to the whole experience around it — a useful shift for a mid-senior designer.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">60 min</span><span>Frank Spillers</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Why Technical Excellence Isn't Enough for AI Products</div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">60 min</span><span>Frank Spillers</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/204b68/why-technical-excellence-isn-t-enough-for-ai-products" target="_blank" rel="noopener">
+          <div class="title">Why Technical Excellence Isn't Enough for AI Products <span class="arrow">↗</span></div>
           <div class="blurb">A reminder that a technically impressive AI feature can still be a bad product — and how to tell the difference.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Dr. Marily Nika, Aman Khan &amp; Tal Raviv</span></div>
-        </div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">45 min</span><span>Dr. Marily Nika, Aman Khan &amp; Tal Raviv</span></div>
+        </a>
+
       </div>
     </section>
 
@@ -281,21 +318,25 @@
       <h2>Design people trust</h2>
       <p class="why">The research and design skill that separates a shipped AI feature from one people actually feel good using.</p>
       <div class="lessons">
-        <div class="lesson">
-          <div class="title">How To Design For Trust and Confidence In AI Products</div>
+
+        <a class="lesson" href="https://maven.com/p/ae8a9e/how-to-design-for-trust-and-confidence-in-ai-products" target="_blank" rel="noopener">
+          <div class="title">How To Design For Trust and Confidence In AI Products <span class="arrow">↗</span></div>
           <div class="blurb">How to design AI features that feel trustworthy, instead of creepy or confusing.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">90 min</span><span>Vitaly Friedman</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Find the Flaw Breaking Trust in Your AI Feature</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">90 min</span><span>Vitaly Friedman</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22Find+the+flaw+breaking+trust+in+your+AI+feature%22" target="_blank" rel="noopener">
+          <div class="title">Find the Flaw Breaking Trust in Your AI Feature <span class="arrow">↗</span></div>
           <div class="blurb">A simple, practical way to spot the one thing that's quietly making users distrust an AI feature.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Jason Cranford Teague</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">The AI Research Skills You Need for 2027</div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">30 min</span><span>Jason Cranford Teague</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22AI+Research+Skills+You+Need%22+John+Whalen" target="_blank" rel="noopener">
+          <div class="title">The AI Research Skills You Need for 2027 <span class="arrow">↗</span></div>
           <div class="blurb">How user research changes (and, reassuringly, how much of it doesn't) once AI tools become part of it.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>John Whalen, PhD</span></div>
-        </div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">30 min</span><span>John Whalen, PhD</span></div>
+        </a>
+
       </div>
     </section>
 
@@ -304,30 +345,35 @@
       <p class="why">Everything above builds the craft. These three sections are what actually gets that craft in front of the right people — resume, portfolio, interview, and the job search itself.</p>
     </div>
 
-    <section class="skill" id="s6" style="border-top:none; padding-top:8px;">
+    <section class="skill no-rule" id="s6">
       <h2>Resume &amp; portfolio</h2>
       <p class="why">The two documents doing the talking before you ever get in a room with someone.</p>
       <div class="lessons">
-        <div class="lesson">
-          <div class="title">Resume Workshop for UX &amp; Product People: Stand Out &amp; Get Interviews</div>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22Resume+Workshop+for+UX+%26+Product+People%22+Sarah+Doody" target="_blank" rel="noopener">
+          <div class="title">Resume Workshop for UX &amp; Product People: Stand Out &amp; Get Interviews <span class="arrow">↗</span></div>
           <div class="blurb">A full working session on turning your resume into something that actually gets you interviews, not just a list of past job titles.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">2 hrs</span><span>Sarah Doody</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">How to Build a Design Portfolio That Gets You Hired</div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">2 hrs</span><span>Sarah Doody</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/bb7a31/how-to-build-a-design-portfolio-that-gets-you-hired" target="_blank" rel="noopener">
+          <div class="title">How to Build a Design Portfolio That Gets You Hired <span class="arrow">↗</span></div>
           <div class="blurb">A step-by-step walkthrough of building a portfolio around getting hired, not just looking pretty.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">60 min</span><span>Eugene Trofimov &amp; Alex Sviryda</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Turn Your Design Portfolio into an Interview Magnet</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">60 min</span><span>Eugene Trofimov &amp; Alex Sviryda</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22Design+Portfolio+into+an+Interview+Magnet%22+Aliena+Cai" target="_blank" rel="noopener">
+          <div class="title">Turn Your Design Portfolio into an Interview Magnet <span class="arrow">↗</span></div>
           <div class="blurb">How to structure your portfolio so it does some of the convincing for you, before you're even in the interview.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Aliena Cai</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Design a UX Portfolio Recruiters Read For More Than 1 Minute</div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">45 min</span><span>Aliena Cai</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22UX+Portfolio+Recruiters+Read+For+More+Than+1+Minute%22" target="_blank" rel="noopener">
+          <div class="title">Design a UX Portfolio Recruiters Read For More Than 1 Minute <span class="arrow">↗</span></div>
           <div class="blurb">What actually keeps a recruiter reading past the first few seconds of your portfolio.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Sarah Doody</span></div>
-        </div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">30 min</span><span>Sarah Doody</span></div>
+        </a>
+
       </div>
     </section>
 
@@ -335,36 +381,43 @@
       <h2>Ace the interview</h2>
       <p class="why">What's really being evaluated in a design interview, and how to talk through your work clearly under pressure.</p>
       <div class="lessons">
-        <div class="lesson">
-          <div class="title">The Hidden Rules of Product Design Interviews</div>
+
+        <a class="lesson" href="https://maven.com/erinessex/the-hidden-rules-of-product-design-interviews" target="_blank" rel="noopener">
+          <div class="title">The Hidden Rules of Product Design Interviews <span class="arrow">↗</span></div>
           <div class="blurb">A deep, unhurried walkthrough of what's really being evaluated in a design interview, beyond the obvious.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">4 hrs</span><span>Erin Essex</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">How to Show Product Thinking in Design Interviews</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">4 hrs</span><span>Erin Essex</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22Show+Product+Thinking+in+Design+Interviews%22" target="_blank" rel="noopener">
+          <div class="title">How to Show Product Thinking in Design Interviews <span class="arrow">↗</span></div>
           <div class="blurb">How to talk through your product thinking out loud, so interviewers see your judgment, not just your screens.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Erin Essex &amp; Alicia Gonzalez</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">The Part of Design Interviews Nobody Talks About</div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">45 min</span><span>Erin Essex &amp; Alicia Gonzalez</span></div>
+        </a>
+
+        <a class="lesson" href="https://www.google.com/search?q=site%3Amaven.com+%22Part+of+Design+Interviews+Nobody+Talks+About%22" target="_blank" rel="noopener">
+          <div class="title">The Part of Design Interviews Nobody Talks About <span class="arrow">↗</span></div>
           <div class="blurb">The quieter, less obvious thing interviewers are actually paying attention to.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Erin Essex &amp; Alicia Gonzalez</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title"><a href="https://maven.com/p/d2960b/ace-your-design-interview-showcase-your-best-self-and-work" target="_blank" rel="noopener">Ace Your Design Interview: Showcase Your Best Self and Work</a></div>
+          <div class="foot"><span class="search">🔍 Find on Maven</span><span class="dur">30 min</span><span>Erin Essex &amp; Alicia Gonzalez</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/d2960b/ace-your-design-interview-showcase-your-best-self-and-work" target="_blank" rel="noopener">
+          <div class="title">Ace Your Design Interview: Showcase Your Best Self and Work <span class="arrow">↗</span></div>
           <div class="blurb">How to build your interview narrative by working backward from what hiring managers are actually looking for.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Harrison Wheeler</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Storytelling Frameworks for Design Interviews</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">30 min</span><span>Harrison Wheeler</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/10c108/storytelling-frameworks-for-design-interviews" target="_blank" rel="noopener">
+          <div class="title">Storytelling Frameworks for Design Interviews <span class="arrow">↗</span></div>
           <div class="blurb">Simple frameworks for telling the story of a project clearly, instead of rambling through every decision you made.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Margo Stern, Josh Silverman &amp; Yuan Wang</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Nail Your Call with a Recruiter as a Product Designer</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">30 min</span><span>Margo Stern, Josh Silverman &amp; Yuan Wang</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/6ed83e/nail-your-call-with-a-recruiter-as-a-product-designer" target="_blank" rel="noopener">
+          <div class="title">Nail Your Call with a Recruiter as a Product Designer <span class="arrow">↗</span></div>
           <div class="blurb">What to say — and ask — on that first recruiter call, before you even get to the design interview.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Carli Sasaki</span></div>
-        </div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">30 min</span><span>Carli Sasaki</span></div>
+        </a>
+
       </div>
     </section>
 
@@ -372,37 +425,46 @@
       <h2>Stand out &amp; get hired</h2>
       <p class="why">The job search itself: where to focus your energy, and what actually makes someone memorable to a hiring team.</p>
       <div class="lessons">
-        <div class="lesson">
-          <div class="title">Design Your Job Search Strategy</div>
+
+        <a class="lesson" href="https://maven.com/p/a1dafb/design-your-job-search-strategy" target="_blank" rel="noopener">
+          <div class="title">Design Your Job Search Strategy <span class="arrow">↗</span></div>
           <div class="blurb">How to job search with an actual plan, instead of applying everywhere and hoping.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Lena Kul</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">UX Job Search: What Works Best in 2026</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">30 min</span><span>Lena Kul</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/817a96/how-to-get-hired-as-a-designer-in-2026" target="_blank" rel="noopener">
+          <div class="title">How to Get Hired as a Designer in 2026 <span class="arrow">↗</span></div>
           <div class="blurb">A current, honest look at what's actually landing designers jobs right now.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">90 min</span><span>Jared Spool</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">Stand Out: Finding the Right UX Jobs to Apply For</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">60 min</span><span>Eugene Trofimov</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/9a6be7/navigate-the-ux-job-market-mess-and-find-your-next-role" target="_blank" rel="noopener">
+          <div class="title">Navigate the UX Job Market Mess and Find Your Next Role <span class="arrow">↗</span></div>
           <div class="blurb">How to target the roles you're genuinely a strong fit for, instead of applying to everything.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">90 min</span><span>Jared Spool</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">How Design Leaders Stand Out in a Competitive Market</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">45 min</span><span>Jared M. Spool &amp; Christine Perfetti</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/7b566a/how-design-leaders-stand-out-in-a-competitive-market" target="_blank" rel="noopener">
+          <div class="title">How Design Leaders Stand Out in a Competitive Market <span class="arrow">↗</span></div>
           <div class="blurb">What experienced design leaders say actually makes a candidate memorable right now.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">45 min</span><span>Rachel Kobetz, Kristin Skinner &amp; Gagan Biyani</span></div>
-        </div>
-        <div class="lesson">
-          <div class="title">How to Get Hired in UX: Sell Your Benefits, Not Features</div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">45 min</span><span>Rachel Kobetz, Kristin Skinner &amp; Gagan Biyani</span></div>
+        </a>
+
+        <a class="lesson" href="https://maven.com/p/c0b8ef/how-to-get-hired-in-ux-sell-your-benefits-not-features" target="_blank" rel="noopener">
+          <div class="title">How to Get Hired in UX: Sell Your Benefits, Not Features <span class="arrow">↗</span></div>
           <div class="blurb">A simple reframe for talking about your work in terms of the value you bring, not just what you shipped.</div>
-          <div class="foot"><span class="watch">▶ Watch now</span><span class="dur">30 min</span><span>Sarah Doody</span></div>
-        </div>
+          <div class="foot"><span class="watch">▶ Watch on Maven</span><span class="dur">30 min</span><span>Sarah Doody</span></div>
+        </a>
+
       </div>
+      <p class="note"><b>▶ Watch on Maven</b> links go straight to the lesson. <b>🔍 Find on Maven</b> links open a search for the exact title — Maven moves these around sometimes, so that's the more reliable way to land on the right page.</p>
     </section>
 
   </main>
 
   <footer>
-    <p>Pulled from Maven's free Lightning Lessons directory on August 24, 2026, and double-checked so every lesson above is on-demand and watchable today — nothing here needs a future live date. If a link ever moves, searching the exact title on <a href="https://maven.com/lightning-lessons?topic=Design" target="_blank" rel="noopener">Maven's Lightning Lessons</a> will find it again.</p>
+    <p>Pulled from Maven's free Lightning Lessons directory on August 24, 2026, and double-checked so every lesson above is on-demand and watchable today — nothing here needs a future live date.</p>
   </footer>
 </div>
+</body>
+</html>
