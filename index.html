@@ -164,6 +164,12 @@
   .divider{ margin:64px 0 44px; padding-top:48px; border-top:2px solid var(--rule-strong); }
   .divider h2{ font-size:1.85rem; margin-bottom:8px; }
 
+  .pinned{ display:flex; align-items:center; gap:14px; margin-top:28px; padding:16px 20px; background:var(--accent-soft); border:1px solid var(--accent); border-radius:12px; text-decoration:none; color:inherit; transition:transform .12s ease; }
+  .pinned:hover{ transform:translateY(-1px); }
+  .pinned .pin-label{ font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.72rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--accent); margin-bottom:4px; }
+  .pinned .pin-title{ font-weight:600; font-size:1rem; color:var(--ink); }
+  .pinned .pin-sub{ font-size:.86rem; color:var(--ink-soft); margin-top:2px; }
+  .pinned .pin-arrow{ margin-left:auto; font-size:1.2rem; color:var(--accent); }
   .note{ margin:18px 0 0; padding:14px 16px; background:var(--surface-2); border-radius:10px; font-size:.88rem; color:var(--ink-soft); }
   .note b{color:var(--ink);}
 
@@ -195,6 +201,11 @@
     </div>
     <div class="note" style="margin-top:20px;"><b>Work in progress.</b> This page is actively being updated — sections get added, reorganized, and re-checked over time. If something looks off or you have a resource worth adding, leave a comment on the relevant card.</div>
   </header>
+
+  <a class="pinned" href="https://fullstackbuilder.kit.com/4f5ad4e911" target="_blank" rel="noopener">
+    <span><div class="pin-label">📌 Pinned · Free</div><div class="pin-title">Full Stack Builder — free resource</div><div class="pin-sub">Start here before you dig into the lists below.</div></span>
+    <span class="pin-arrow">↗</span>
+  </a>
 
   <div style="margin-top:36px;">
     <p class="group-label">Jump to what's useful</p>
