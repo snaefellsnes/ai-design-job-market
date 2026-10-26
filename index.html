@@ -3,17 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Security policy: only this page's own inline script (by hash) and Google Fonts may load.
+<!-- Security policy: only this page's own inline script (by hash) and its self-hosted fonts may load.
      If you edit the <script> at the bottom, its sha256 hash below must be updated or it won't run.
      Reviving likes/comments also needs the Supabase URL added to connect-src. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Df+Z/CIDC3WZcHpoOVAga/dZPaV0D5L8/S/oneTWlAk='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Df+Z/CIDC3WZcHpoOVAga/dZPaV0D5L8/S/oneTWlAk='; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Free Resources for Designers</title>
 <meta name="description" content="A free, no-hype set of resources for designers building AI fluency and navigating the job market — lessons, courses, communities, and hackathons, all free.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  /* Fonts are self-hosted (SIL Open Font License) so visitors never contact Google */
+/* latin-ext */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/fraunces-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/fraunces-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/fraunces-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/fraunces-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/fraunces-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/fraunces-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/ibm-plex-mono-400-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/ibm-plex-mono-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/ibm-plex-mono-500-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/ibm-plex-mono-500-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/public-sans-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/public-sans-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/public-sans-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/public-sans-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/public-sans-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/public-sans-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/public-sans-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/public-sans-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
   :root{
     --bg:#F4F5F0; --surface:#FFFFFF; --surface-2:#EDEFE7;
     --ink:#1A1D1B; --ink-soft:#565D56; --ink-faint:#8B928A;
@@ -1487,6 +1648,24 @@ Look across all of them and tell me:
 
     <section class="skill no-rule" id="hackathons">
       <div class="hlist">
+        <div class="card-shell"><a class="hcard" href="https://paypalaihackathon.devpost.com/" target="_blank" rel="noopener noreferrer">
+          <span class="hdate">Now – Nov 12</span>
+          <div><div class="hname">PayPal AI Hackathon <span class="free-pill">Free</span></div><div class="hfmt">Online · teams welcome</div><div class="hdesc">Build an app that combines PayPal’s developer tools with any AI tool. Entries need working code, so join as the designer on a team with a developer.</div></div>
+        </a>
+<div class="engage" data-key="https://paypalaihackathon.devpost.com/"><button type="button" class="like-btn" aria-pressed="false"><span class="like-icon">👍</span><span class="like-count">0</span></button><button type="button" class="comment-toggle">💬 <span class="comment-count">0</span> comments</button><div class="comment-panel" hidden><div class="comment-list"></div><form class="comment-form"><textarea maxlength="500" placeholder="Leave a note for other designers—was this useful?" required></textarea><button type="submit">Post</button></form></div></div>
+</div>
+        <div class="card-shell"><a class="hcard" href="https://lablab.ai/ai-hackathons/vultr-hackathon" target="_blank" rel="noopener noreferrer">
+          <span class="hdate">Nov 3 – 8</span>
+          <div><div class="hname">Vultr Agent Rush Hackathon <span class="free-pill">Free</span></div><div class="hfmt">Hybrid · online build, optional on-site finale (Salt Lake City)</div><div class="hdesc">Build an AI agent that does real work, solo or in a team of up to 6. Open to everyone whatever their coding experience, and each person gets $200 in Vultr credits.</div></div>
+        </a>
+<div class="engage" data-key="https://lablab.ai/ai-hackathons/vultr-hackathon"><button type="button" class="like-btn" aria-pressed="false"><span class="like-icon">👍</span><span class="like-count">0</span></button><button type="button" class="comment-toggle">💬 <span class="comment-count">0</span> comments</button><div class="comment-panel" hidden><div class="comment-list"></div><form class="comment-form"><textarea maxlength="500" placeholder="Leave a note for other designers—was this useful?" required></textarea><button type="submit">Post</button></form></div></div>
+</div>
+        <div class="card-shell"><a class="hcard" href="https://www.eventbrite.com/e/founding-dev-design-hackathon-tickets-2003815419862" target="_blank" rel="noopener noreferrer">
+          <span class="hdate">Nov 6 – 10</span>
+          <div><div class="hname">Founding Dev Design Hackathon <span class="free-pill">Free</span></div><div class="hfmt">Online · 4-day build, solo or pairs</div><div class="hdesc">A hackathon made for designers: design and publish a landing page that converts, with no code needed, using Founding.dev’s builder. Limited to 200 spots, and you keep your design.</div></div>
+        </a>
+<div class="engage" data-key="https://www.eventbrite.com/e/founding-dev-design-hackathon-tickets-2003815419862"><button type="button" class="like-btn" aria-pressed="false"><span class="like-icon">👍</span><span class="like-count">0</span></button><button type="button" class="comment-toggle">💬 <span class="comment-count">0</span> comments</button><div class="comment-panel" hidden><div class="comment-list"></div><form class="comment-form"><textarea maxlength="500" placeholder="Leave a note for other designers—was this useful?" required></textarea><button type="submit">Post</button></form></div></div>
+</div>
         <div class="card-shell"><a class="hcard" href="https://www.spaceappschallenge.org/" target="_blank" rel="noopener noreferrer">
           <span class="hdate">Nov 14 – 15 (reg. opens Aug 26)</span>
           <div><div class="hname">NASA International Space Apps Challenge <span class="free-pill">Free</span></div><div class="hfmt">Hybrid · global virtual + local in-person events</div><div class="hdesc">48-hour global hackathon using open NASA data. Explicitly recruits "designers, storytellers, and makers" of every skill level — historically design-heavy winning teams.</div></div>
